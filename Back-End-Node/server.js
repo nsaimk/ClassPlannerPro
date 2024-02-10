@@ -71,11 +71,11 @@ app.get("/auth/redirect", async (req, res) => {
       //login
       if (
         existingUser.rows[0]["slack_firstname"] !==
-          userProfile["profile"]["first_name"] ||
+        userProfile["profile"]["first_name"] ||
         existingUser.rows[0]["slack_photo_link"] !==
-          userProfile["profile"]["image_original"] ||
+        userProfile["profile"]["image_original"] ||
         existingUser.rows[0]["slack_lastname"] !==
-          userProfile["profile"]["last_name"]
+        userProfile["profile"]["last_name"]
       ) {
         updateUser(
           existingUser.rows[0]["id"],
@@ -338,3 +338,5 @@ app.get("/roles", async (req, res) => {
 });
 
 module.exports = app;
+// const port = 5005;
+// app.listen(port, () => console.log(`Listening on port ${port}`));
