@@ -127,7 +127,8 @@ app.get("/auth/redirect", async (req, res) => {
   }
 });
 
-const options = {
+// changes for 443 local run and vercel, because vercel manages HTTPS itself
+/* const options = {
   key: fs.readFileSync(`${__dirname}/client-key.pem`),
   cert: fs.readFileSync(`${__dirname}/client-cert.pem`),
 };
@@ -143,7 +144,17 @@ if (process.env.LOCAL_DEVELOPMENT) {
   // when we deploy on Vercel, Vercel adds HTTPS for us, so we can just use one port
   //console.log("PRODUCT");
   https.createServer(options, app).listen(10000);
+} */
+
+const http = require('http');
+
+if (process.env.LOCAL_DEVELOPMENT) {
+  http.createServer(app).listen(10000);
+} else {
+  // On Vercel, Vercel handles HTTPS, so we only need to create an HTTP server
+  http.createServer(app).listen(10000);
 }
+
 
 // //cities
 app.get("/cities", verifyToken, async (req, res) => {
