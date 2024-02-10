@@ -346,6 +346,6 @@ app.get("/roles", async (req, res) => {
   }
 });
 
-module.exports = app;
-// const port = 5005;
-// app.listen(port, () => console.log(`Listening on port ${port}`));
+//module.exports = app;
+const port = 5005;
+app.listen(port, () => console.log(`Listening on port ${port}`));

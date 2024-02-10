@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const url = process.env.REACT_APP_BACKEND_URL
+const url = process.env.REACT_APP_BACKEND_URL_DB
 
 const Main = () => {
     const classes = useStyles();
