@@ -146,8 +146,6 @@ if (process.env.LOCAL_DEVELOPMENT) {
   https.createServer(options, app).listen(10000);
 } */
 
-const http = require('http');
-
 if (process.env.LOCAL_DEVELOPMENT) {
   http.createServer(app).listen(10000);
 } else {
