@@ -9,7 +9,7 @@ const Header = () => {
       <AppBar position="fixed" >
         <Toolbar style={{ backgroundColor: "white"}}>
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" 
+            src="https://codeyourfuture.io/wp-content/uploads/2019/03/cyf_brand.png" 
             style={{ height: '90px', margin: '5px 0px' }}
           />
           <Typography variant="h2"
